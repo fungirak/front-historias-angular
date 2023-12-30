@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { PortafolioService } from '../../services/portafolio.service';
+import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 
 
@@ -16,11 +17,12 @@ export class EducacionComponent implements OnInit {
   i! : number ;
   editID! : number;
   form: UntypedFormGroup;
+  nombreUsuario: string = "";
 
 
 
 
-  constructor(public datosPortafolio: PortafolioService) {
+  constructor(public datosPortafolio: PortafolioService, private route: ActivatedRoute) {
     this.form= new UntypedFormGroup({
      detalles: new UntypedFormControl(['', [Validators.required, Validators.minLength(2)]]),
      estado: new UntypedFormControl(['', [Validators.required, Validators.minLength(2)]]),
@@ -39,7 +41,16 @@ export class EducacionComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.datosPortafolio.obtenerDatosEducacion().subscribe(data => {
+     // Obtener el nombre de usuario de los parámetros de la URL
+     this.route.params.subscribe(params => {
+      this.nombreUsuario = params['nombreUsuario'];
+
+      // Ahora puedes usar this.nombreUsuario en tu lógica
+      console.log('Nombre de usuario (acerca_de component):', this.nombreUsuario);
+    });
+
+
+    this.datosPortafolio.obtenerDatosEducacion(this.nombreUsuario).subscribe(data => {
       console.log("Datos Personales: " + JSON.stringify(data));
       this.miPortafolio=data;
       console.log("data: ",data);
@@ -131,7 +142,7 @@ export class EducacionComponent implements OnInit {
       console.log("this.form.value: " , this.form.value);
       console.log("AcercaDe method post Data", data);
 
-      this.datosPortafolio.obtenerDatosEducacion().subscribe(data => {
+      this.datosPortafolio.obtenerDatosEducacion(this.nombreUsuario).subscribe(data => {
         this.miPortafolio=data;
       });
     });
@@ -159,7 +170,7 @@ export class EducacionComponent implements OnInit {
         this.datosPortafolio.deleteEducacion(this.miPortafolio[i].id).subscribe(data => {
           console.log("Borrando registro", data);
 
-          this.datosPortafolio.obtenerDatosEducacion().subscribe(data => {
+          this.datosPortafolio.obtenerDatosEducacion(this.nombreUsuario).subscribe(data => {
             this.miPortafolio=data;
           });
 

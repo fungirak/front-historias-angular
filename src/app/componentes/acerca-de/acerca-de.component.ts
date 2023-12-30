@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { PortafolioService } from '../../services/portafolio.service';
+import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 import { IAcercaDe } from '../../interfaces/iacercade';
 
@@ -15,11 +16,12 @@ export class AcercaDeComponent implements OnInit {
   modoEdicion: boolean = false;
   modoNuevoRegistro: boolean = false;
   form: UntypedFormGroup;
-  alertaDelete: string = "¿Eliminar información AcercaDe?"
+  alertaDelete: string = "¿Eliminar información AcercaDe?";
+  nombreUsuario: string = "";
 
 
 
-  constructor(public datosPortafolio: PortafolioService, private formBuilder: UntypedFormBuilder)  {
+  constructor(public datosPortafolio: PortafolioService, private formBuilder: UntypedFormBuilder, private route: ActivatedRoute)  {
     this.form= new UntypedFormGroup({
       fullname: new UntypedFormControl([ '', [Validators.required, Validators.minLength(2)]]),
       posicion: new UntypedFormControl(['', [Validators.required, Validators.minLength(2)]]),
@@ -28,7 +30,17 @@ export class AcercaDeComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.datosPortafolio.obtenerDatosAcercaDe().subscribe(data => {
+
+     // Obtener el nombre de usuario de los parámetros de la URL
+     this.route.params.subscribe(params => {
+      this.nombreUsuario = params['nombreUsuario'];
+
+      // Ahora puedes usar this.nombreUsuario en tu lógica
+      console.log('Nombre de usuario (acerca_de component):', this.nombreUsuario);
+    });
+
+
+    this.datosPortafolio.obtenerDatosAcercaDe(this.nombreUsuario).subscribe(data => {
       this.miPortafolio=data;
       console.log("mi porta", this.miPortafolio)
       if(this.miPortafolio===undefined){
@@ -36,7 +48,7 @@ export class AcercaDeComponent implements OnInit {
           console.log(data);
         });
 
-      this.datosPortafolio.obtenerDatosAcercaDe().subscribe(data => {
+      this.datosPortafolio.obtenerDatosAcercaDe(this.nombreUsuario).subscribe(data => {
         this.miPortafolio=data;
       });
 
@@ -74,7 +86,7 @@ export class AcercaDeComponent implements OnInit {
       console.log("this.form.value: " , this.form.value);
       console.log("AcercaDe method PUT Data", data);
 
-      this.datosPortafolio.obtenerDatosAcercaDe().subscribe(data => {
+      this.datosPortafolio.obtenerDatosAcercaDe(this.nombreUsuario).subscribe(data => {
         const dataArray = Array.isArray(data) ? data : [data];
         if (dataArray.length > 0) {
           this.miPortafolio = dataArray[0];
@@ -96,7 +108,7 @@ export class AcercaDeComponent implements OnInit {
     this.modoNuevoRegistro=false;
     });
 
-    this.datosPortafolio.obtenerDatosAcercaDe().subscribe(data => {
+    this.datosPortafolio.obtenerDatosAcercaDe(this.nombreUsuario).subscribe(data => {
       this.miPortafolio=data;
     });
   }
@@ -117,7 +129,7 @@ export class AcercaDeComponent implements OnInit {
         this.datosPortafolio.deleteAcercaDe(id).subscribe(data => {
           console.log("Borrando registro", data);
 
-          this.datosPortafolio.obtenerDatosAcercaDe().subscribe(data => {
+          this.datosPortafolio.obtenerDatosAcercaDe(this.nombreUsuario).subscribe(data => {
             this.miPortafolio=data;
           });
 

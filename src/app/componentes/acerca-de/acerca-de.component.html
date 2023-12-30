@@ -24,8 +24,17 @@
                 -->
               </div>
 
-              <h4 class="text-muted fw-bold">{{miPortafolio.fullname}}</h4>
-              <h5 class="fw-bold">{{miPortafolio.posicion}} </h5>
+              <h4 class="text-muted fw-bold">
+                <div *ngIf="miPortafolio">
+                  {{ miPortafolio.fullname }}
+                </div>
+              </h4>
+              <h5 class="fw-bold">
+                <div *ngIf="miPortafolio">
+                  {{ miPortafolio.posicion }}
+                </div>
+
+              </h5>
 
             </div>
 

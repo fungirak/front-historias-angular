@@ -47,25 +47,25 @@ export class PortafolioService {
   // **************   |   METHOD'S GET ALL    | **************************
   // *********************************************************************
 
-  obtenerDatosAcercaDe():Observable<IAcercaDe> {
-    return this.http.get<IAcercaDe>( this.url + 'acerca_de' );
+  obtenerDatosAcercaDe(nombreUsuario: string):Observable<IAcercaDe> {
+    return this.http.get<IAcercaDe>( this.url + nombreUsuario + '/acerca_de' );
   }
 
-  obtenerDatosEducacion():Observable<IEducacion> {
-    return this.http.get<IEducacion>( this.url + 'educacion');
+  obtenerDatosEducacion(nombreUsuario: string):Observable<IEducacion> {
+    return this.http.get<IEducacion>( this.url + nombreUsuario + '/educacion');
   }
 
 
-  obtenerDatosExperiencias():Observable<IExperiencia> {
-    return this.http.get<IExperiencia>( this.url + 'experiencia');
+  obtenerDatosExperiencias(nombreUsuario: string):Observable<IExperiencia> {
+    return this.http.get<IExperiencia>( this.url + nombreUsuario +'/experiencia');
   }
 
-  obtenerDatosProyectos():Observable<IProyecto> {
-    return this.http.get<IProyecto>( this.url + 'proyectos');
+  obtenerDatosProyectos(nombreUsuario: string):Observable<IProyecto> {
+    return this.http.get<IProyecto>( this.url + nombreUsuario + '/proyectos');
   }
 
-  obtenerDatosSkills():Observable<ISkill> {
-    return this.http.get<ISkill>( this.url + 'skills');
+  obtenerDatosSkills(nombreUsuario: string):Observable<ISkill> {
+    return this.http.get<ISkill>( this.url + nombreUsuario + '/skills');
   }
 
   // *********************************************************************

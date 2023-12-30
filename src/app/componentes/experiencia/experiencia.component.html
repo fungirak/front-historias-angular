@@ -34,35 +34,35 @@
                <div  class="text-start  ">
                  <label for="empresa" class="form-label  fw-bold">empresa:</label>
                </div>
-               <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🏛 empresa"  formControlName="empresa" id="empresa" required autofocus>
+               <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🏛 empresa"  formControlName="empresa" id="_empresa" required autofocus>
              </div>
 
              <div  class="">
               <div  class="text-start  ">
                 <label for="ubicacion"  class="form-label fw-bold">Ubicación:</label>
               </div>
-              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder="📍Ubicación" formControlName="ubicacion" id="ubicacion"  required>
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder="📍Ubicación" formControlName="ubicacion" id="_ubicacion"  required>
             </div>
 
              <div  class=" ">
                <div  class="text-start  ">
                  <label for="puesto" class="form-label  fw-bold">Puesto:</label>
                </div>
-               <input type="text" class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 💼 Puesto" formControlName="puesto" id="puesto" required>
+               <input type="text" class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 💼 Puesto" formControlName="puesto" id="_puesto" required>
              </div>
 
              <div  class=" ">
                <div  class="text-start  ">
                  <label for="periodo" class="form-label  fw-bold">Fecha de Inicio:</label>
                </div>
-               <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Inicio" formControlName="fechaInicio" id="fechaInicio" required >
+               <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Inicio" formControlName="fechaInicio" id="_fechaInicio" required >
              </div>
 
              <div  class=" ">
               <div  class="text-start  ">
                 <label for="periodo" class="form-label  fw-bold">Fecha de Finalización:</label>
               </div>
-              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Fin?" formControlName="fechaFinalizacion" id="fechaFinalizacion" >
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Fin?" formControlName="fechaFinalizacion" id="_fechaFinalizacion" >
             </div>
 
 
@@ -70,7 +70,7 @@
                <div  class="text-start  ">
                  <label for="actividades" class="form-label  fw-bold">Actividades:</label>
                </div>
-               <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow mb-4" placeholder=" ⛳ Actividades" formControlName="actividades" id="actividades"  required >
+               <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow mb-4" placeholder=" ⛳ Actividades" formControlName="actividades" id="_actividades"  required >
              </div>
        </div>
 
@@ -170,7 +170,7 @@
            </div>
 
 
-
+        <div class="m-4" *ngIf="portafolio">
          <div class="m-4">
            <div class="d-flex">
              <div>
@@ -193,7 +193,7 @@
              <p class="fw-normal ms-4"><span class="ms-1"></span>{{portafolio.actividades}}</p>
            </div>
          </div>
-
+        </div>
 
        </div>
      </div>

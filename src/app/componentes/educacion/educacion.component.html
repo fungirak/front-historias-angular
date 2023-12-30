@@ -4,7 +4,7 @@
    <!-- NUEVO REGISTRO -->
    <div *ngIf="modoNuevoRegistro===false">
     <div class="d-flex justify-content-center mb-4 m-4">
-      <button class="btn btn-sm btn-green border shadow m-1 text-center text-light fw-bold" (click)="onCrear($event)" ><span><img src="assets/media/logoAdd.png" alt="editar" class="logo-sm mt-1 bg-white rounded-circle">AGREGAR EDUCACIÓN</span></button>
+      <button type="button" class="btn btn-sm btn-green border shadow m-1 text-center text-light fw-bold" (click)="onCrear($event)" ><span><img src="assets/media/logoAdd.png" alt="editar" class="logo-sm mt-1 bg-white rounded-circle">AGREGAR EDUCACIÓN</span></button>
     </div>
   </div>
 
@@ -19,9 +19,9 @@
           <div *ngIf="modoNuevoRegistro===true">
             <div class="d-flex justify-content-end">
               <div class="p-1">
-                <button class="btn p-0 m-1" (click)="onCancelNuevoRegistro()" ><span><img src="assets/media/logoCancel.png" alt="editar" class="logo-sm mt-1"></span></button>
+                <button type="button" class="btn p-0 m-1" (click)="onCancelNuevoRegistro()" ><span><img src="assets/media/logoCancel.png" alt="editar" class="logo-sm mt-1"></span></button>
 
-                <button class="btn p-0 m-1" (click)="onSaveNewNuevoRegistro($event)" ><span><img src="assets/media/logoSave.png" alt="editar" class="logo-sm mt-1"></span></button>
+                <button type="button" class="btn p-0 m-1" (click)="onSaveNewNuevoRegistro($event)" ><span><img src="assets/media/logoSave.png" alt="editar" class="logo-sm mt-1"></span></button>
 
               </div>
             </div>
@@ -95,8 +95,8 @@
 
 
           <div class="d-flex justify-content-end">
-            <button class="btn p-0 m-1" (click)="onCancel($event)" ><span><img src="assets/media/logoCancel.png" alt="editar" class="logo-sm mt-1"></span></button>
-            <button class="btn p-0 m-1" (click)="onSaveEdit($event)" ><span><img src="assets/media/logoSave.png" alt="editar" class="logo-sm mt-1"></span></button>
+            <button type="button" class="btn p-0 m-1" (click)="onCancel($event)" ><span><img src="assets/media/logoCancel.png" alt="editar" class="logo-sm mt-1"></span></button>
+            <button type="button" class="btn p-0 m-1" (click)="onSaveEdit($event)" ><span><img src="assets/media/logoSave.png" alt="editar" class="logo-sm mt-1"></span></button>
          </div>
 
       </div>

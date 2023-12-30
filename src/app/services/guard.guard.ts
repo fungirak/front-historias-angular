@@ -15,9 +15,12 @@ export class GuardGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+
       let token = this.autenticacionServicio.token();
 
       if(token != null ){
+        let nombreUsuario = this.obtenerNombreUsuarioDesdeToken(token);
+        this.rutas.navigate(['/portafolio', nombreUsuario]);
         return true;
       } else {
         this.rutas.navigate(['/login'])
@@ -25,6 +28,14 @@ export class GuardGuard implements CanActivate {
       }
 
 
+
+
+  }
+
+  private obtenerNombreUsuarioDesdeToken(token: string): string {
+    // Implementa lógica para extraer el nombre de usuario del token
+    // Por ahora, devolveré un valor ficticio, ajusta según tu necesidad
+    return 'usuario1';
   }
 
 }

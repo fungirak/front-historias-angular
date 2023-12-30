@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { PortafolioService } from '../../services/portafolio.service';
+import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,10 +16,11 @@ export class ProyectosComponent implements OnInit {
   i! : number ;
   editID! : number;
   form: UntypedFormGroup;
+  nombreUsuario: string = "";
 
 
 
-  constructor(public datosPortafolio: PortafolioService) {
+  constructor(public datosPortafolio: PortafolioService, private route: ActivatedRoute) {
     this.form= new UntypedFormGroup ({
       descripcion: new UntypedFormControl([ '', [Validators.required, Validators.minLength(2)]]),
       imagen:  new UntypedFormControl(['', [Validators.required, Validators.minLength(2)]]),
@@ -27,7 +29,17 @@ export class ProyectosComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.datosPortafolio.obtenerDatosProyectos().subscribe(data => {
+
+     // Obtener el nombre de usuario de los parámetros de la URL
+     this.route.params.subscribe(params => {
+      this.nombreUsuario = params['nombreUsuario'];
+
+      // Ahora puedes usar this.nombreUsuario en tu lógica
+      console.log('Nombre de usuario (acerca_de component):', this.nombreUsuario);
+    });
+
+
+    this.datosPortafolio.obtenerDatosProyectos(this.nombreUsuario).subscribe(data => {
       console.log("Datos Personales: " + JSON.stringify(data));
       this.miPortafolio=data;
       console.log(data);
@@ -101,7 +113,7 @@ export class ProyectosComponent implements OnInit {
       console.log("this.form.value: " , this.form.value);
       console.log("PROYECTO method POST Data Enviada", data);
 
-      this.datosPortafolio.obtenerDatosProyectos().subscribe(data => {
+      this.datosPortafolio.obtenerDatosProyectos(this.nombreUsuario).subscribe(data => {
         this.miPortafolio=data;
       });
     });
@@ -154,7 +166,7 @@ export class ProyectosComponent implements OnInit {
         this.datosPortafolio.deleteProyecto(this.miPortafolio[i].id).subscribe(data => {
           console.log("Borrando registro", data);
 
-          this.datosPortafolio.obtenerDatosProyectos().subscribe(data => {
+          this.datosPortafolio.obtenerDatosProyectos(this.nombreUsuario).subscribe(data => {
             this.miPortafolio=data;
           });
 

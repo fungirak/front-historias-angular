@@ -6,8 +6,9 @@ import { PageNotFoundComponent } from './componentes/page-not-found/page-not-fou
 import { GuardGuard } from './services/guard.guard';
 
 const routes: Routes = [
-  { path: 'portafolio/:nombreUsuario', component: PortafolioComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'portafolio/:nombreUsuario', component: PortafolioComponent},
+  { path: 'portafolio/:nombreUsuario/educacion', component: PortafolioComponent},
   { path: '', redirectTo: 'login' , pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
