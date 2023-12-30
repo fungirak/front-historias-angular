@@ -1,0 +1,35 @@
+.logoSkills{
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  background-color: white;
+
+}
+
+.logo-skill{
+  height: 2em;
+  width: 2em;
+  margin-bottom: .5em;
+}
+
+.logo-sm{
+  width: 1.2em;
+  height: 1.2em;
+  margin: .5em;
+}
+
+.mt-8{
+  margin-top: 8em;
+}
+
+.btn-green{
+  background-color: rgb(41, 247, 41);
+}
+
+.alineado{
+  margin-left: 4em;
+}
+
+.alineado-sm{
+  margin-left: 2em;
+}

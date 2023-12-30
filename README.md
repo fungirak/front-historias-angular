@@ -1,3 +1,43 @@
+# PROYECTO FINAL ARGENTINA PROGRAMA
+# MÓDULO "YO PROGRAMO" EDICIÓN 2021/2022 (Actualizado 30/12/2023)
+# by GABRIEL LAZZARINI
+______________________________________________________
+# Usuario de prueba para el sistema : nombreUsuario: "usuario1" , password: "usuario1"  
+# Ingresar los datos en la caja de login, hacer click en iniciar sesión y esperar 4 segundos 
+______________________________________________________
+
+# FRONTEND Hecho con ANGULAR Framework.
+
+ALGUNOS DETALLES...
+
+# Componentes Principales : 
+      • portafolio
+      • login
+      • register
+      
+# Otros Componentes:
+     • banner-superior
+     • header
+     • acerca-de
+     • educacion
+     • experiencia
+     • proyectos
+     • skills
+     • footer
+     • page-not-found
+     
+# SERVICES 
+     • autentication.service.ts
+     • interceptor.service.ts
+     • portafolio.service.ts       
+
+
+  SISTEMA FRONTEND DESPLEGADO EN FIREBASE.
+  ESTE PROYECTO SE ENCUENTRA EN ETAPA DE FINALIZACIÓN.
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+
+
 # NuevoFrontAngularArgProg
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.

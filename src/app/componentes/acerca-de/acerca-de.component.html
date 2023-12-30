@@ -1,0 +1,188 @@
+
+<div class="container superponer shadow">
+
+  <div class="d-flex justify-content-around">
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12 d-flex justify-content-center">
+        <div class="text-center">
+          <img src="assets/media/logoPersona.png" alt="logogabi" class="logoGabi shadow mb-4">
+
+
+            <!-- MÓDULO BOTONES EDIT -->
+
+            <div *ngIf="modoEdicion===false">
+              <div class=" d-flex justify-content-end mt-0 m-0">
+                <div class="p-1">
+                  <button class="btn p-0 m-1" (click)="onEdit( miPortafolio.id, $event)" ><span><img src="assets/media/logoPencil.png" alt="editar" class="logo-sm"></span></button>
+                </div>
+
+                <!-- Eliminar Descripcion ( No permitido )
+                <div class="p-1">
+                  <button class="btn p-0 m-1" (click)="onDelete(miPortafolio.id, $event)" ><span><img src="assets/media/logoDelete.png" alt="editar" class="logo-sm mt-1"></span></button>
+                </div>
+                -->
+              </div>
+
+              <h4 class="text-muted fw-bold">{{miPortafolio.fullname}}</h4>
+              <h5 class="fw-bold">{{miPortafolio.posicion}} </h5>
+
+            </div>
+
+
+
+
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-12 d-flex justify-content-center">
+        <div class="">
+
+          <!-- NUEVO REGISTRO (no permitido )
+            <div *ngIf="modoNuevoRegistro===false " class="mt-2" >
+              <div class="d-flex justify-content-center mb-3 acomodar-pro-2">
+                <button class="btn border-0 p-0 m-1" (click)="onCrear($event)" ><span><img src="assets/media/logoAdd.png" alt="editar" class="logo-sm mt-1">Añadir Descripción Personal</span></button>
+              </div>
+            </div>
+
+        <div *ngIf="modoNuevoRegistro===true">
+          <div class="d-flex">
+            <div class="p-1">
+              <button class="btn p-0 m-1" (click)="onCancelNuevoRegistro()" ><span><img src="assets/media/logoCancel.png" alt="editar" class="logo-sm mt-1">Cancelar</span></button>
+
+              <button class="btn p-0 m-1" (click)="onSaveNewNuevoRegistro($event)" ><span><img src="assets/media/logoSave.png" alt="editar" class="logo-sm mt-1">Guardar</span></button>
+
+            </div>
+          </div>
+        </div>
+
+         -->
+
+        <!------    FORMULARIO NEW   (no permitido)
+        <div *ngIf="modoNuevoRegistro===true" >
+          <form  class="col-md-12 col-sm-12 mb-4" [formGroup]="form" >
+
+            <div class="text-center p-2 border shadow rounded ">
+
+              <h3 class="text-center text-info m-3">Nueva Descripción Personal</h3>
+
+                <div  class="m-2">
+                  <div>
+                    <label for="fullname" class="form-label  fw-bold">Nombre y Apellido:</label>
+                  </div>
+                  <input type="text" class="col-8 p-2 mb-2 border rounded border-1" placeholder="fullname"  formControlName="fullname" id="fullname" required>
+                </div>
+
+                <div  class="m-2 ">
+                  <div>
+                    <label for="posicion" class="form-label  fw-bold">Posicion:</label>
+                  </div>
+                  <input type="text" class="col-8 p-2 mb-2 border rounded border-1" placeholder="posicion" formControlName="posicion" id="posicion" required>
+                </div>
+
+                <div  class="m-2 ">
+                  <div>
+                    <label for="descripcion" class="form-label  fw-bold">Descripcion:</label>
+                  </div>
+                  <input type="text"  class="col-8 p-2 mb-2 border rounded border-1" placeholder="descripcion" formControlName="descripcion" id="descripcion" required >
+                </div>
+
+
+          </div>
+
+
+          </form>
+        </div>
+
+
+            FORMULARIO NEW    ------>
+
+
+          <div class="text-center fw-bold mt-1 ">
+
+
+          <!------    FORMULARIO EDIT   ------>
+        <div *ngIf="modoEdicion===true">
+          <h6 class="text-start p-2 rounded border  bg-dark text-light">ACERCA DE</h6>
+          <form  class="col-md-12 col-sm-12 mb-4" [formGroup]="form" >
+
+            <div class="text-center p-2 border shadow rounded ">
+
+              <div *ngIf="modoEdicion===true">
+                <div class="d-flex justify-content-end">
+                  <div class="p-1">
+                    <button class="btn p-0 m-1" (click)="onCancel($event)" ><span><img src="assets/media/logoCancel.png" alt="editar" class="logo-sm mt-1"></span></button>
+
+                    <button class="btn p-0 m-1" (click)="onSaveEdit( miPortafolio.id, $event)" ><span><img src="assets/media/logoSave.png" alt="editar" class="logo-sm mt-1"></span></button>
+
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="text-center text-info m-3">Editar Descripción Personal</h3>
+
+                <div  class="m-2">
+                  <div>
+                    <label for="fullname" class="form-label  fw-bold">Nombre y Apellido:</label>
+                  </div>
+                  <input type="text"  class="col-8 p-2 mb-2 border rounded border-1" placeholder="fullname"  formControlName="fullname" id="fullname" required>
+                </div>
+
+                <div  class="m-2 ">
+                  <div>
+                    <label for="posicion" class="form-label  fw-bold">Posicion:</label>
+                  </div>
+                  <input type="text"  class="col-8 p-2 mb-2 border rounded border-1" placeholder="posicion" formControlName="posicion" id="posicion" required>
+                </div>
+
+                <div  class="m-2 ">
+                  <div>
+                    <label for="descripcion" class="form-label  fw-bold">Descripcion:</label>
+                  </div>
+                  <input type="text"   class="col-8 p-2 mb-2 border rounded border-1" placeholder="descripcion" formControlName="descripcion" id="descripcion" required >
+                </div>
+
+
+          </div>
+
+
+          </form>
+        </div>
+        <!------  FIN  FORMULARIO EDIT    ------>
+
+            <!-- MÓDULO VISUALIZACIÓN ESTÁTICA -->
+
+
+
+        </div>
+
+        <div  class="">
+
+          <div class="text-center">
+
+            <div class="fw-normal">
+
+              <div *ngFor="let portafolio of miPortafolio  ; let i = index" [attr.data-index]="i" >
+
+                <p class="ms-2">{{portafolio.fullname}}</p>
+
+              <div *ngIf="modoEdicion===false">
+
+                <p class="ms-2">{{portafolio.posicion}}</p>
+                <p class="ms-2">{{portafolio.descripcion}}</p>
+              </div>
+
+              </div>
+               <!-- FIN MÓDULO VISUALIZACIÓN ESTÁTICA -->
+            </div>
+          </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

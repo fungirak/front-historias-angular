@@ -1,0 +1,21 @@
+.logo-job{
+  width: 2em;
+  height: 2em;
+  margin-bottom: .5em;
+}
+
+.logo-sm{
+  width: 1.2em;
+  height: 1.2em;
+  margin: .5em;
+}
+
+.mt-8{
+  margin-top: 8em;
+}
+
+
+.btn-green{
+  background-color: rgb(41, 247, 41);
+}
+

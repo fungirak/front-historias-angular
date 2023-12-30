@@ -1,0 +1,205 @@
+
+  <div class="justify-content-center p-2">
+
+   <!-- NUEVO REGISTRO -->
+   <div *ngIf="modoNuevoRegistro===false">
+    <div class="d-flex justify-content-center mb-4 m-4">
+      <button class="btn btn-sm btn-green border shadow m-1 text-center text-light fw-bold" (click)="onCrear($event)" ><span><img src="assets/media/logoAdd.png" alt="editar" class="logo-sm mt-1 bg-white rounded-circle">AGREGAR EDUCACIÓN</span></button>
+    </div>
+  </div>
+
+    <!------    FORMULARIO NEW    ------>
+    <div *ngIf="modoNuevoRegistro===true"  class="d-flex justify-content-center">
+
+
+      <form  class="col-md-8 col-12  mb-4"  [formGroup]="form" >
+
+        <div class="text-center p-3 border shadow rounded mt-5 bg-white">
+
+          <div *ngIf="modoNuevoRegistro===true">
+            <div class="d-flex justify-content-end">
+              <div class="p-1">
+                <button class="btn p-0 m-1" (click)="onCancelNuevoRegistro()" ><span><img src="assets/media/logoCancel.png" alt="editar" class="logo-sm mt-1"></span></button>
+
+                <button class="btn p-0 m-1" (click)="onSaveNewNuevoRegistro($event)" ><span><img src="assets/media/logoSave.png" alt="editar" class="logo-sm mt-1"></span></button>
+
+              </div>
+            </div>
+          </div>
+
+
+          <h3 class="text-center text-info m-3"><img src="assets/media/logoEdu.png" class="logo-edu" alt="logo educación"><span class="ms-3">Nueva Educación</span></h3>
+
+            <div  class="">
+              <div  class="text-start  ">
+                <label for="institucion" class="form-label  fw-bold">Institución:</label>
+              </div>
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🏛 Institución"  formControlName="institucion" id="institucion" required autofocus>
+            </div>
+
+            <div  class=" ">
+              <div  class="text-start  ">
+                <label for="titulo" class="form-label  fw-bold">Título:</label>
+              </div>
+              <input type="text" class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🎓 Título" formControlName="titulo" id="titulo" required>
+            </div>
+
+            <div  class=" ">
+              <div  class="text-start  ">
+                <label for="periodo" class="form-label  fw-bold">Fecha de Inicio:</label>
+              </div>
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Inicio" formControlName="fechaInicio" id="fechasInicio" required >
+            </div>
+
+            <div  class=" ">
+              <div  class="text-start  ">
+                <label for="periodo" class="form-label  fw-bold">Fecha de Finalización:</label>
+              </div>
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Fin?" formControlName="fechaFinalizacion" id="fechaFinalizacion">
+            </div>
+
+            <div  class="">
+              <div  class="text-start  ">
+                <label for="estado"  class="form-label fw-bold">Estado:</label>
+              </div>
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder="⏳ Estado" formControlName="estado" id="estado"  required>
+            </div>
+
+            <div  class="">
+              <div  class="text-start  ">
+                <label for="detalles" class="form-label  fw-bold">Detalles:</label>
+              </div>
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow mb-4" placeholder=" ℹ Detalles" formControlName="detalles" id="detalles"  required >
+            </div>
+      </div>
+
+
+      </form>
+    </div>
+
+    <!------    FORMULARIO NEW    ------>
+
+  <!------    FORMULARIO EDIT    ------>
+  <div *ngIf="modoEdicion===true" class="d-flex justify-content-center ">
+
+
+
+
+    <form  class="col-md-8 col-12 mb-4 p-3 bg-white rounded shadow" [formGroup]="form" >
+
+      <!-- MÓDULO BOTONES EDIT -->
+
+
+      <div *ngIf="modoEdicion===true" class="d-flex justify-content-center mt-2">
+        <div class="row w-100">
+
+
+          <div class="d-flex justify-content-end">
+            <button class="btn p-0 m-1" (click)="onCancel($event)" ><span><img src="assets/media/logoCancel.png" alt="editar" class="logo-sm mt-1"></span></button>
+            <button class="btn p-0 m-1" (click)="onSaveEdit($event)" ><span><img src="assets/media/logoSave.png" alt="editar" class="logo-sm mt-1"></span></button>
+         </div>
+
+      </div>
+      </div>
+      <!-- FIN MÓDULO BOTONES EDIT -->
+
+
+      <div class="text-center p-2">
+
+        <h3 class="text-center text-info m-3"><img src="assets/media/logoEdu.png" class="logo-edu" alt="logo educación"><span class="ms-3">Editar Educación</span></h3>
+
+          <div  class="bg-gray">
+            <div  class="text-start">
+              <label for="institucion" class="form-label  fw-bold">Institución:</label>
+            </div>
+            <input type="text"   class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🏛 Institución"  formControlName="institucion" id="institucion" required autofocus>
+          </div>
+
+          <div  class=" ">
+            <div  class="text-start">
+              <label for="titulo" class="form-label  fw-bold">Título:</label>
+            </div>
+            <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🎓 Título" formControlName="titulo" id="titulo" required>
+          </div>
+
+          <div  class=" ">
+            <div  class="text-start">
+              <label for="periodo" class="form-label  fw-bold">Periodo:</label>
+            </div>
+            <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Periodo" formControlName="periodo" id="periodo" required >
+          </div>
+
+          <div  class="">
+            <div  class="text-start">
+              <label for="estado"  class="form-label fw-bold">Estado:</label>
+            </div>
+            <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder="⏳ Estado" formControlName="estado" id="estado"  required>
+          </div>
+
+          <div  class="">
+            <div  class="text-start">
+              <label for="detalles" class="form-label  fw-bold">Detalles:</label>
+            </div>
+            <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow mb-4" placeholder=" ℹ Detalles" formControlName="detalles" id="detalles"  required >
+          </div>
+    </div>
+
+
+    </form>
+  </div>
+  <!------  FIN  FORMULARIO EDIT    ------>
+
+
+    <div *ngFor="let portafolio of miPortafolio  ; let i = index" [attr.data-index]="i" >
+      <div class="row justify-content-center">
+
+
+        <div class="border rounded p-2  col-md-8 col-12  bg-white shadow-lg mb-4">
+
+         <div *ngIf="modoEdicion===false">
+            <div class=" d-flex justify-content-end">
+              <div class="p-1">
+                <button class="btn p-0 m-1" (click)="onEdit(miPortafolio.id, i, $event)" ><span><img src="assets/media/logoPencil.png" alt="editar" class="logo-sm mt-1"></span></button>
+              </div>
+
+              <div class="p-1">
+                <button class="btn p-0 m-1" (click)="onDelete(i, $event)" ><span><img src="assets/media/logoDelete.png" alt="editar" class="logo-sm mt-1"></span></button>
+              </div>
+            </div>
+          </div>
+
+
+
+        <div class="m-4">
+          <div class="d-flex">
+            <div>
+              <img src="assets/media/logoEdu.png" class="logo-edu" alt="logo educación">
+            </div>
+            <div>
+              <h4 class="fw-bold mb-4 col-12 ms-2"> {{portafolio.institucion}}</h4>
+            </div>
+          </div>
+          <div class="ms-4">
+            <p class="fw-bold  mb-0"> 🎓 TÍTULO</p>
+            <p class="fw-normal ms-4"><span class="ms-1"></span>{{portafolio.titulo}}</p>
+            <p class="fw-bold  mb-0"> 📆 FECHA DE INICIO</p>
+            <p class="fw-normal ms-4"><span class="ms-1"></span>{{portafolio.fechaInicio}}</p>
+            <p class="fw-bold  mb-0"> 📆 FECHA DE FINALIZACIÓN</p>
+            <p class="fw-normal ms-4"><span class="ms-1"></span>{{portafolio.fechaFinalizacion}}</p>
+            <p class="fw-bold mb-0">⏳ ESTADO</p>
+            <p class="fw-normal ms-4"><span class="ms-1"></span>{{portafolio.estado}}</p>
+            <p class="fw-bold  mb-0">DETALLES</p>
+            <p class="fw-normal ms-4"><span class="ms-1"></span>{{portafolio.detalles}}</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+  </div>
+
