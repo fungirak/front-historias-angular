@@ -48,4 +48,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  onCreateAccount(event:Event){
+    this.ruta.navigate(['/crear_cuenta']);
+  }
+
 }

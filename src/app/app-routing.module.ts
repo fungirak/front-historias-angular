@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PortafolioComponent } from './componentes/portafolio/portafolio.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { RegisterComponent } from './componentes/register/register.component';
 import { PageNotFoundComponent } from './componentes/page-not-found/page-not-found.component';
 import { GuardGuard } from './services/guard.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
+  { path: 'crear_cuenta', component: RegisterComponent},
   { path: 'portafolio/:nombreUsuario', component: PortafolioComponent},
   { path: 'portafolio/:nombreUsuario/educacion', component: PortafolioComponent},
   { path: '', redirectTo: 'login' , pathMatch: 'full' },
@@ -14,7 +16,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

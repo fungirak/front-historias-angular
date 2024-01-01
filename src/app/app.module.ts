@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +22,8 @@ import { InterceptorService } from './services/interceptor.service';
 import { PortafolioNoAuthInterceptorService } from './services/portafolioNoAuthInterceptor.service';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { PageNotFoundComponent } from './componentes/page-not-found/page-not-found.component';
+import { RegisterComponent } from './componentes/register/register.component';
+import { SearchComponent } from './componentes/search/search.component';
 
 @NgModule({
   declarations: [
@@ -33,16 +36,19 @@ import { PageNotFoundComponent } from './componentes/page-not-found/page-not-fou
     SkillsComponent,
     ProyectosComponent,
     LoginComponent,
+    RegisterComponent,
     PortafolioComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
   ],
   providers: [
     PortafolioService,

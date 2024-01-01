@@ -1,0 +1,20 @@
+<!-- user-search.component.html -->
+
+<div class="container d-flex justify-content-center align-items-center mt-2">
+  <input class="input-buscar-usuarios w-50" id="search" type="text" placeholder="Buscar Usuarios" [formControl]="searchControl" />
+
+  <!-- Lista de usuarios -->
+  <ul *ngIf="users.length > 0">
+    <li *ngFor="let user of users">
+      <div>
+        <!-- <img [src]="user.profileImageUrl" alt="Profile Image" /> -->
+        <a [routerLink]="['/portafolio/']">{{ user.fullname }}</a>
+        <span>{{ user.fullname }}</span>
+        <p>{{ user.fullName }}</p>
+      </div>
+    </li>
+  </ul>
+
+</div>
+
+

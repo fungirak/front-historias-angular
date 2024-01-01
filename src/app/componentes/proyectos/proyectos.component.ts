@@ -35,7 +35,7 @@ export class ProyectosComponent implements OnInit {
       this.nombreUsuario = params['nombreUsuario'];
 
       // Ahora puedes usar this.nombreUsuario en tu lógica
-      console.log('Nombre de usuario (acerca_de component):', this.nombreUsuario);
+      console.log('Nombre de usuario (proyecto component):', this.nombreUsuario);
     });
 
 

@@ -1,0 +1,20 @@
+.input-buscar-usuarios{
+
+    height: 20px;
+    margin: 5px auto;
+
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ebe8e8;
+    box-shadow: inset 2px 5px 10px rgba(185, 181, 181, 0.3);
+    transition: 300ms ease-in-out;
+
+}
+
+.input-buscar-usuarios:focus {
+  background-color: white;
+  box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
