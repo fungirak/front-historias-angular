@@ -8,9 +8,9 @@
     <li *ngFor="let user of users">
       <div>
         <!-- <img [src]="user.profileImageUrl" alt="Profile Image" /> -->
-        <a [routerLink]="['/portafolio/']">{{ user.fullname }}</a>
-        <span>{{ user.fullname }}</span>
-        <p>{{ user.fullName }}</p>
+        <a [routerLink]="['/portafolio/']" class="texto-no-sobresale">{{ user.fullname }}</a>
+        <span class="texto-no-sobresale">{{ user.fullname }}</span>
+        <p class="texto-no-sobresale">{{ user.fullName }}</p>
       </div>
     </li>
   </ul>

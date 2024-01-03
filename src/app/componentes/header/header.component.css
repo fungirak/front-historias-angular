@@ -5,3 +5,6 @@
 
 }
 
+.texto-no-sobresale{
+  overflow: hidden;
+}

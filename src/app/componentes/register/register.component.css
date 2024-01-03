@@ -5,3 +5,7 @@
 .imagen-fondo{
   background-color: rgb(44, 191, 228);
 }
+
+.texto-no-sobresale{
+  overflow: hidden;
+}

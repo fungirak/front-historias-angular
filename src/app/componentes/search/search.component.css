@@ -13,6 +13,10 @@
 
 }
 
+.texto-no-sobresale{
+  overflow: hidden;
+}
+
 .input-buscar-usuarios:focus {
   background-color: white;
   box-shadow: 13px 13px 100px #969696,

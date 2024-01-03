@@ -6,7 +6,9 @@
   padding: 1em;
 }
 
-
+.texto-no-sobresale{
+  overflow: hidden;
+}
 
 .superponer{
   margin-top: -16vh;

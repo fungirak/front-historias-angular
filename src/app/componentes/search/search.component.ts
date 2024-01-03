@@ -24,6 +24,7 @@ export class SearchComponent implements OnInit {
       )
       .subscribe(users => {
         this.users = users;
+        console.log("respuesta GET input search usuario: ", this.users);
       });
   }
 }

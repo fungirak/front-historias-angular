@@ -7,6 +7,7 @@ import { IAcercaDe } from '../interfaces/iacercade';
 import { IEducacion } from '../interfaces/ieducacion';
 import { IExperiencia } from '../interfaces/iexperiencia';
 import { IProyecto } from '../interfaces/iproyecto';
+import { IUsuario } from '../interfaces/iusuario';
 
 
 @Injectable({
@@ -15,6 +16,7 @@ import { IProyecto } from '../interfaces/iproyecto';
 export class PortafolioService {
 
    url: string;
+   urlInputSearchUsers: string = "http://localhost:8080/api/v1/portafolio/usuarios/search";
 
   // Headers para POST, PUT Y DELETE.
   headers = new HttpHeaders({
@@ -46,6 +48,10 @@ export class PortafolioService {
   // *********************************************************************
   // **************   |   METHOD'S GET ALL    | **************************
   // *********************************************************************
+
+  obtenerDatosUsuarios(nombreUsuario: string):Observable<IUsuario> {
+    return this.http.get<IUsuario>( this.url + "?query=" + nombreUsuario  );
+  }
 
   obtenerDatosAcercaDe(nombreUsuario: string):Observable<IAcercaDe> {
     return this.http.get<IAcercaDe>( this.url + nombreUsuario + '/acerca_de' );

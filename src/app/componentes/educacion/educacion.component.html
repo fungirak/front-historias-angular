@@ -34,42 +34,42 @@
               <div  class="text-start  ">
                 <label for="institucion" class="form-label  fw-bold">Institución:</label>
               </div>
-              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🏛 Institución"  formControlName="institucion" id="institucion" required autofocus>
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🏛 Institución"  formControlName="institucion" id="_institucion" required autofocus>
             </div>
 
             <div  class=" ">
               <div  class="text-start  ">
                 <label for="titulo" class="form-label  fw-bold">Título:</label>
               </div>
-              <input type="text" class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🎓 Título" formControlName="titulo" id="titulo" required>
+              <input type="text" class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🎓 Título" formControlName="titulo" id="_titulo" required>
             </div>
 
             <div  class=" ">
               <div  class="text-start  ">
                 <label for="periodo" class="form-label  fw-bold">Fecha de Inicio:</label>
               </div>
-              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Inicio" formControlName="fechaInicio" id="fechasInicio" required >
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Inicio" formControlName="fechaInicio" id="_fechasInicio" required >
             </div>
 
             <div  class=" ">
               <div  class="text-start  ">
                 <label for="periodo" class="form-label  fw-bold">Fecha de Finalización:</label>
               </div>
-              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Fin?" formControlName="fechaFinalizacion" id="fechaFinalizacion">
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Fin?" formControlName="fechaFinalizacion" id="_fechaFinalizacion">
             </div>
 
             <div  class="">
               <div  class="text-start  ">
                 <label for="estado"  class="form-label fw-bold">Estado:</label>
               </div>
-              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder="⏳ Estado" formControlName="estado" id="estado"  required>
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder="⏳ Estado" formControlName="estado" id="_estado"  required>
             </div>
 
             <div  class="">
               <div  class="text-start  ">
                 <label for="detalles" class="form-label  fw-bold">Detalles:</label>
               </div>
-              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow mb-4" placeholder=" ℹ Detalles" formControlName="detalles" id="detalles"  required >
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow mb-4" placeholder=" ℹ Detalles" formControlName="detalles" id="_detalles"  required >
             </div>
       </div>
 
@@ -181,15 +181,15 @@
           </div>
           <div class="ms-4">
             <p class="fw-bold  mb-0"> 🎓 TÍTULO</p>
-            <p class="fw-normal ms-4"><span class="ms-1"></span>{{portafolio.titulo}}</p>
+            <p class="fw-normal ms-4 texto-no-sobresale"><span class="ms-1"></span>{{portafolio.titulo}}</p>
             <p class="fw-bold  mb-0"> 📆 FECHA DE INICIO</p>
-            <p class="fw-normal ms-4"><span class="ms-1"></span>{{portafolio.fechaInicio}}</p>
+            <p class="fw-normal ms-4 texto-no-sobresale"><span class="ms-1"></span>{{portafolio.fechaInicio}}</p>
             <p class="fw-bold  mb-0"> 📆 FECHA DE FINALIZACIÓN</p>
-            <p class="fw-normal ms-4"><span class="ms-1"></span>{{portafolio.fechaFinalizacion}}</p>
+            <p class="fw-normal ms-4 texto-no-sobresale"><span class="ms-1"></span>{{portafolio.fechaFinalizacion}}</p>
             <p class="fw-bold mb-0">⏳ ESTADO</p>
-            <p class="fw-normal ms-4"><span class="ms-1"></span>{{portafolio.estado}}</p>
+            <p class="fw-normal ms-4 texto-no-sobresale"><span class="ms-1"></span>{{portafolio.estado}}</p>
             <p class="fw-bold  mb-0">DETALLES</p>
-            <p class="fw-normal ms-4"><span class="ms-1"></span>{{portafolio.detalles}}</p>
+            <p class="fw-normal ms-4 texto-no-sobresale"><span class="ms-1"></span>{{portafolio.detalles}}</p>
           </div>
         </div>
 

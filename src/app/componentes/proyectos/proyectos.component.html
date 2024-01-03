@@ -30,21 +30,21 @@
             <div  class="text-start ">
               <label for="titulo" class="form-label  fw-bold">Título:</label>
             </div>
-           <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded  border-1 border-danger shadow" placeholder=" ✳ Título" formControlName="titulo" id="titulo" required autofocus>
+           <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded  border-1 border-danger shadow" placeholder=" ✳ Título" formControlName="titulo" id="_titulo" required autofocus>
           </div>
 
             <div  class="">
               <div  class="text-start ">
                 <label for="descripcion" class="form-label  fw-bold">Descripción:</label>
               </div>
-             <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded  border-1 border-danger shadow" placeholder=" 📝 Descripción"  formControlName="descripcion" id="descripcion" required >
+             <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded  border-1 border-danger shadow" placeholder=" 📝 Descripción"  formControlName="descripcion" id="_descripcion" required >
             </div>
 
             <div  class=" ">
               <div  class="text-start ">
                 <label for="imagen" class="form-label  fw-bold">Link Imagen:</label>
               </div>
-             <input type="text" class="col-md-10 col-12 p-2 mb-2 border rounded  border-1 border-danger shadow  mb-4" placeholder=" 🖼 Link Imagen" formControlName="imagen" id="imagen" required>
+             <input type="text" class="col-md-10 col-12 p-2 mb-2 border rounded  border-1 border-danger shadow  mb-4" placeholder=" 🖼 Link Imagen" formControlName="imagen" id="_imagen" required>
             </div>
 
       </div>
@@ -123,11 +123,11 @@
             </div>
 
 
-                <h5 class="m-2">  ✳ {{portafolio.titulo}}</h5>
+                <h5 class="m-2 texto-no-sobresale">  ✳ {{portafolio.titulo}}</h5>
                 <a href="" target="_blank" rel="noreferrer noopener">
                   <img src={{portafolio.imagen}} alt="imagenproyecto" class="logosProyectos hoverProyectos">
                 </a>
-                <p class="p-2 m-3"> 📝 {{portafolio.descripcion}}</p>
+                <p class="p-2 m-3 texto-no-sobresale"> 📝 {{portafolio.descripcion}}</p>
 
           </div>
 

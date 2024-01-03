@@ -1,7 +1,4 @@
-export interface Usuario {
-  contraseña: String;
-  correoElectronico: String;
-  correoSecundario: String;
-  numeroTelefono: Number;
-
+export interface IUsuario {
+  nombre: String;
+  nombreUsuario: String;
 }

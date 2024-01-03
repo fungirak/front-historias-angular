@@ -173,12 +173,12 @@
 
               <div *ngFor="let portafolio of miPortafolio  ; let i = index" [attr.data-index]="i" >
 
-                <p class="ms-2">{{portafolio.fullname}}</p>
+                <p class="ms-2 texto-no-sobresale">{{portafolio.fullname}}</p>
 
               <div *ngIf="modoEdicion===false">
 
-                <p class="ms-2">{{portafolio.posicion}}</p>
-                <p class="ms-2">{{portafolio.descripcion}}</p>
+                <p class="ms-2 texto-no-sobresale">{{portafolio.posicion}}</p>
+                <p class="ms-2 texto-no-sobresale">{{portafolio.descripcion}}</p>
               </div>
 
               </div>

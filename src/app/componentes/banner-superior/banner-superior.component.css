@@ -9,6 +9,9 @@
   height: 50px;
 }
 
+.texto-no-sobresale{
+  overflow: hidden;
+}
 
 
 .space-7{
