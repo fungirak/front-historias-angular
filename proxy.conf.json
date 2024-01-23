@@ -1,6 +1,6 @@
 {
   "/portafolio/**":{
-    "target":"http://localhost:8080",
+    "target":"https://historias.azurewebsites.net",
     "changeOrigin": true,
     "secure": false,
     "logLevel": "debug"

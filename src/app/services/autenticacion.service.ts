@@ -9,8 +9,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AutenticacionService {
 
 
-  urlLogin="http://localhost:8080/auth/login";
-  urlNuevo="http://localhost:8080/auth/nuevo";
+  urlLogin="https://historias.azurewebsites.net/auth/login";
+  urlNuevo="https://historias.azurewebsites.net/auth/nuevo";
   usuario: BehaviorSubject<any>;
 
 

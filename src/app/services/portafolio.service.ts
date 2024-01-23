@@ -16,7 +16,7 @@ import { IUsuario } from '../interfaces/iusuario';
 export class PortafolioService {
 
    url: string;
-   urlInputSearchUsers: string = "http://localhost:8080/api/v1/portafolio/usuarios/search";
+   urlInputSearchUsers: string = "https://historias.azurewebsites.net/api/v1/portafolio/usuarios/search";
 
   // Headers para POST, PUT Y DELETE.
   headers = new HttpHeaders({
@@ -25,7 +25,7 @@ export class PortafolioService {
 
 
   constructor(private http:HttpClient, private route: ActivatedRoute) {
-    this.url = "http://localhost:8080/portafolio/";
+    this.url = "https://historias.azurewebsites.net/portafolio/";
     this.route.params.subscribe(params => {
       const userName = params['nombreUsuario']; // suponiendo que el nombre de usuario está en la URL como un parámetro llamado 'usuario'
       const userPortafolioUrl = this.url + userName;

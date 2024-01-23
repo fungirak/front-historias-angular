@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SearchService {
-  private apiUrl = 'http://localhost:8080/api/v1/portafolio/usuarios/search';
+  private apiUrl = 'https://historias.azurewebsites.net/api/v1/portafolio/usuarios/search';
 
   constructor(private http: HttpClient) {}
 
