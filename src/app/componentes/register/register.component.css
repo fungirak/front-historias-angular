@@ -9,3 +9,18 @@
 .texto-no-sobresale{
   overflow: hidden;
 }
+
+.desplazado{
+  margin-left: 15vw;
+}
+
+.imagen-fondo {
+  background-image: url('fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+}
+
+.acomodado-pantalla{
+  margin-left: 42.5vw;
+}

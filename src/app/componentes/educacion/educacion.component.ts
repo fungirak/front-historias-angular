@@ -96,13 +96,13 @@ export class EducacionComponent implements OnInit {
     console.log("this.form.value: " , this.form.value);
     console.log("id: " , id);
 
-    this.form.setValue({
-      detalles: this.miPortafolio[i].detalles,
-      estado: this.miPortafolio[i].estado,
+    this.form.patchValue({
       institucion: this.miPortafolio[i].institucion,
+      titulo: this.miPortafolio[i].titulo,
       fechaInicio: this.miPortafolio[i].fechaInicio,
       fechaFinalizacion: this.miPortafolio[i].fechaFinalizacion,
-      titulo: this.miPortafolio[i].titulo
+      estado: this.miPortafolio[i].estado,
+      detalles: this.miPortafolio[i].detalles,
     })
 
     console.log("this.form.value: " , this.form.value);

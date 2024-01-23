@@ -28,7 +28,7 @@
 }
 
 .btn-green{
-  background-color: rgb(41, 247, 41);
+  background-color: rgba(240, 240, 84, 0.603)
 }
 
 .alineado{
@@ -37,4 +37,8 @@
 
 .alineado-sm{
   margin-left: 2em;
+}
+
+.texto-con-sombra {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

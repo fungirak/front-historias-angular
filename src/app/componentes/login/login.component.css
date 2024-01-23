@@ -2,8 +2,15 @@
   background-color: rgb(0, 204, 255);
 }
 
-.imagen-fondo{
-  background-color: rgb(44, 191, 228);
+.imagen-fondo {
+  background-image: url('fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+}
+
+.acomodado-pantalla{
+
 }
 
 .mb-10{

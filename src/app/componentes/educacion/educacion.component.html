@@ -1,5 +1,5 @@
 
-  <div class="justify-content-center p-2">
+  <div class="justify-content-center p-2 bg-white">
 
    <!-- NUEVO REGISTRO -->
    <div *ngIf="modoNuevoRegistro===false">
@@ -14,7 +14,7 @@
 
       <form  class="col-md-8 col-12  mb-4"  [formGroup]="form" >
 
-        <div class="text-center p-3 border shadow rounded mt-5 bg-white">
+        <div class="text-center p-3 border shadow rounded mt-5">
 
           <div *ngIf="modoNuevoRegistro===true">
             <div class="d-flex justify-content-end">
@@ -34,42 +34,42 @@
               <div  class="text-start  ">
                 <label for="institucion" class="form-label  fw-bold">Institución:</label>
               </div>
-              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🏛 Institución"  formControlName="institucion" id="_institucion" required autofocus>
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1  shadow" placeholder=" 🏛 Institución"  formControlName="institucion" id="_institucion" required autofocus>
             </div>
 
             <div  class=" ">
               <div  class="text-start  ">
                 <label for="titulo" class="form-label  fw-bold">Título:</label>
               </div>
-              <input type="text" class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🎓 Título" formControlName="titulo" id="_titulo" required>
+              <input type="text" class="col-md-10 col-12 p-2 mb-2 border rounded border-1  shadow" placeholder=" 🎓 Título" formControlName="titulo" id="_titulo" required>
             </div>
 
             <div  class=" ">
               <div  class="text-start  ">
                 <label for="periodo" class="form-label  fw-bold">Fecha de Inicio:</label>
               </div>
-              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Inicio" formControlName="fechaInicio" id="_fechasInicio" required >
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1  shadow" placeholder=" 📆 Inicio" formControlName="fechaInicio" id="_fechasInicio" required >
             </div>
 
             <div  class=" ">
               <div  class="text-start  ">
                 <label for="periodo" class="form-label  fw-bold">Fecha de Finalización:</label>
               </div>
-              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Fin?" formControlName="fechaFinalizacion" id="_fechaFinalizacion">
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1  shadow" placeholder=" 📆 Fin?" formControlName="fechaFinalizacion" id="_fechaFinalizacion">
             </div>
 
             <div  class="">
               <div  class="text-start  ">
                 <label for="estado"  class="form-label fw-bold">Estado:</label>
               </div>
-              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder="⏳ Estado" formControlName="estado" id="_estado"  required>
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1  shadow" placeholder="⏳ Estado" formControlName="estado" id="_estado"  required>
             </div>
 
             <div  class="">
               <div  class="text-start  ">
                 <label for="detalles" class="form-label  fw-bold">Detalles:</label>
               </div>
-              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow mb-4" placeholder=" ℹ Detalles" formControlName="detalles" id="_detalles"  required >
+              <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1  shadow mb-4" placeholder=" ℹ Detalles" formControlName="detalles" id="_detalles"  required >
             </div>
       </div>
 
@@ -85,7 +85,7 @@
 
 
 
-    <form  class="col-md-8 col-12 mb-4 p-3 bg-white rounded shadow" [formGroup]="form" >
+    <form  class="col-md-8 col-12 mb-4 p-3  rounded shadow" [formGroup]="form" >
 
       <!-- MÓDULO BOTONES EDIT -->
 
@@ -108,39 +108,39 @@
 
         <h3 class="text-center text-info m-3"><img src="assets/media/logoEdu.png" class="logo-edu" alt="logo educación"><span class="ms-3">Editar Educación</span></h3>
 
-          <div  class="bg-gray">
+          <div  class="">
             <div  class="text-start">
               <label for="institucion" class="form-label  fw-bold">Institución:</label>
             </div>
-            <input type="text"   class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🏛 Institución"  formControlName="institucion" id="institucion" required autofocus>
+            <input type="text"   class="col-md-10 col-12 p-2 mb-2 border rounded border-1  shadow" placeholder=" 🏛 Institución"  formControlName="institucion" id="institucion" required autofocus>
           </div>
 
           <div  class=" ">
             <div  class="text-start">
               <label for="titulo" class="form-label  fw-bold">Título:</label>
             </div>
-            <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 🎓 Título" formControlName="titulo" id="titulo" required>
+            <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1  shadow" placeholder=" 🎓 Título" formControlName="titulo" id="titulo" required>
           </div>
 
           <div  class=" ">
             <div  class="text-start">
               <label for="periodo" class="form-label  fw-bold">Periodo:</label>
             </div>
-            <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder=" 📆 Periodo" formControlName="periodo" id="periodo" required >
+            <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1  shadow" placeholder=" 📆 Periodo" formControlName="periodo" id="periodo" required >
           </div>
 
           <div  class="">
             <div  class="text-start">
               <label for="estado"  class="form-label fw-bold">Estado:</label>
             </div>
-            <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow" placeholder="⏳ Estado" formControlName="estado" id="estado"  required>
+            <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1  shadow" placeholder="⏳ Estado" formControlName="estado" id="estado"  required>
           </div>
 
           <div  class="">
             <div  class="text-start">
               <label for="detalles" class="form-label  fw-bold">Detalles:</label>
             </div>
-            <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1 border-info shadow mb-4" placeholder=" ℹ Detalles" formControlName="detalles" id="detalles"  required >
+            <input type="text"  class="col-md-10 col-12 p-2 mb-2 border rounded border-1  shadow mb-4" placeholder=" ℹ Detalles" formControlName="detalles" id="detalles"  required >
           </div>
     </div>
 
@@ -154,7 +154,7 @@
       <div class="row justify-content-center">
 
 
-        <div class="border rounded p-2  col-md-8 col-12  bg-white shadow-lg mb-4">
+        <div class="border rounded p-2  col-md-8 col-12   shadow-lg mb-4">
 
          <div *ngIf="modoEdicion===false">
             <div class=" d-flex justify-content-end">
