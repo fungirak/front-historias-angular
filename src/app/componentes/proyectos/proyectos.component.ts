@@ -91,13 +91,13 @@ export class ProyectosComponent implements OnInit {
 
   onSaveEdit( event: Event ){
     event.preventDefault;
-    this.datosPortafolio.putProyecto(this.form.value, this.editID).subscribe(data => {
+    this.datosPortafolio.putProyecto(this.nombreUsuario, this.form.value, this.editID).subscribe(data => {
       console.log("this.form.value: " , this.form.value);
       console.log("id: " , this.editID);
       console.log("PROYECTO method PUT Data Editada", data);
 
 
-      this.datosPortafolio.obtenerOneDatosProyecto(this.editID).subscribe(data => {
+      this.datosPortafolio.obtenerOneDatosProyecto(this.nombreUsuario, this.editID).subscribe(data => {
         console.log("Dato: " + JSON.stringify(data));
         this.miPortafolio[this.i]=data;
         console.log("miPortafolio[i : ", this.miPortafolio[this.i]);
@@ -109,7 +109,7 @@ export class ProyectosComponent implements OnInit {
 
   onSaveNewNuevoRegistro(event: Event ){
     event.preventDefault;
-    this.datosPortafolio.postProyecto(this.form.value).subscribe(data => {
+    this.datosPortafolio.postProyecto(this.nombreUsuario, this.form.value).subscribe(data => {
       console.log("this.form.value: " , this.form.value);
       console.log("PROYECTO method POST Data Enviada", data);
 
@@ -163,7 +163,7 @@ export class ProyectosComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.datosPortafolio.deleteProyecto(this.miPortafolio[i].id).subscribe(data => {
+        this.datosPortafolio.deleteProyecto(this.nombreUsuario, this.miPortafolio[i].id).subscribe(data => {
           console.log("Borrando registro", data);
 
           this.datosPortafolio.obtenerDatosProyectos(this.nombreUsuario).subscribe(data => {

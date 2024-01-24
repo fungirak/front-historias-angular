@@ -44,7 +44,7 @@ export class AcercaDeComponent implements OnInit {
       this.miPortafolio=data;
       console.log("mi porta", this.miPortafolio)
       if(this.miPortafolio===undefined){
-        this.datosPortafolio.postAcercaDe(this.form.value).subscribe(data => {
+        this.datosPortafolio.postAcercaDe(this.nombreUsuario, this.form.value).subscribe(data => {
           console.log(data);
         });
 
@@ -82,7 +82,7 @@ export class AcercaDeComponent implements OnInit {
 
   onSaveEdit( id: any, event: Event ){
     event.preventDefault;
-    this.datosPortafolio.putAcercaDe(this.form.value, id).subscribe(data => {
+    this.datosPortafolio.putAcercaDe(this.nombreUsuario, this.form.value, id).subscribe(data => {
       console.log("this.form.value: " , this.form.value);
       console.log("AcercaDe method PUT Data", data);
 
@@ -102,7 +102,7 @@ export class AcercaDeComponent implements OnInit {
 
   onSaveNewNuevoRegistro(event: Event ){
     event.preventDefault;
-    this.datosPortafolio.postAcercaDe(this.form.value).subscribe(data => {
+    this.datosPortafolio.postAcercaDe(this.nombreUsuario, this.form.value).subscribe(data => {
       console.log("this.form.value: " , this.form.value);
       console.log("AcercaDe method post Data", data);
     this.modoNuevoRegistro=false;
@@ -126,7 +126,7 @@ export class AcercaDeComponent implements OnInit {
       confirmButtonText: 'ELIMINAR'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.datosPortafolio.deleteAcercaDe(id).subscribe(data => {
+        this.datosPortafolio.deleteAcercaDe(this.nombreUsuario, id).subscribe(data => {
           console.log("Borrando registro", data);
 
           this.datosPortafolio.obtenerDatosAcercaDe(this.nombreUsuario).subscribe(data => {

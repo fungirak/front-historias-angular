@@ -88,12 +88,12 @@ export class SkillsComponent implements OnInit {
 
   onSaveEdit( event: Event ){
     event.preventDefault;
-    this.datosPortafolio.putSkill(this.form.value, this.editID).subscribe(data => {
+    this.datosPortafolio.putSkill(this.nombreUsuario, this.form.value, this.editID).subscribe(data => {
       console.log("this.form.value: " , this.form.value);
       console.log("id: " , this.editID);
       console.log("SKILL method PUT Data Editada", data);
 
-      this.datosPortafolio.obtenerOneDatosSkill(this.editID).subscribe(data => {
+      this.datosPortafolio.obtenerOneDatosSkill(this.nombreUsuario, this.editID).subscribe(data => {
         console.log("Dato: " + JSON.stringify(data));
         this.miPortafolio[this.i]=data;
         console.log("miPortafolio[i : ", this.miPortafolio[this.i]);
@@ -107,7 +107,7 @@ export class SkillsComponent implements OnInit {
 
   onSaveNewNuevoRegistro(event: Event ){
     event.preventDefault;
-    this.datosPortafolio.postSkill(this.form.value).subscribe(data => {
+    this.datosPortafolio.postSkill(this.nombreUsuario, this.form.value).subscribe(data => {
       console.log("this.form.value: " , this.form.value);
       console.log("SKILL method POST Data Enviada", data);
 
@@ -158,7 +158,7 @@ export class SkillsComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.datosPortafolio.deleteSkill(this.miPortafolio[i].id).subscribe(data => {
+        this.datosPortafolio.deleteSkill(this.nombreUsuario, this.miPortafolio[i].id).subscribe(data => {
           console.log("Borrando registro", data);
 
           this.datosPortafolio.obtenerDatosSkills(this.nombreUsuario).subscribe(data => {

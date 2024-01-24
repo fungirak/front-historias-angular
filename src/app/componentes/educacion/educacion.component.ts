@@ -118,12 +118,12 @@ export class EducacionComponent implements OnInit {
 
   onSaveEdit( event: Event ){
     event.preventDefault;
-    this.datosPortafolio.putEducacion(this.form.value, this.editID).subscribe(data => {
+    this.datosPortafolio.putEducacion(this.nombreUsuario, this.form.value, this.editID).subscribe(data => {
       console.log("this.form.value: " , this.form.value);
       console.log("id: " , this.editID);
       console.log("EDUCACIÓN method PUT Data Editada", data);
 
-      this.datosPortafolio.obtenerOneDatosEducacion(this.editID).subscribe(data => {
+      this.datosPortafolio.obtenerOneDatosEducacion(this.nombreUsuario, this.editID).subscribe(data => {
         console.log("Dato: " + JSON.stringify(data));
         this.miPortafolio[this.i]=data;
         console.log("miPortafolio[i : ", this.miPortafolio[this.i]);
@@ -138,7 +138,7 @@ export class EducacionComponent implements OnInit {
 
   onSaveNewNuevoRegistro(event: Event ){
     event.preventDefault;
-    this.datosPortafolio.postEducacion(this.form.value).subscribe(data => {
+    this.datosPortafolio.postEducacion(this.nombreUsuario, this.form.value).subscribe(data => {
       console.log("this.form.value: " , this.form.value);
       console.log("AcercaDe method post Data", data);
 
@@ -167,7 +167,7 @@ export class EducacionComponent implements OnInit {
       cancelButtonColor: '#00b5ff'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.datosPortafolio.deleteEducacion(this.miPortafolio[i].id).subscribe(data => {
+        this.datosPortafolio.deleteEducacion(this.nombreUsuario, this.miPortafolio[i].id).subscribe(data => {
           console.log("Borrando registro", data);
 
           this.datosPortafolio.obtenerDatosEducacion(this.nombreUsuario).subscribe(data => {

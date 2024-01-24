@@ -61,11 +61,11 @@ export class PortafolioService {
   // *********************************************************************
 
   obtenerDatosUsuarios(nombreUsuario: string):Observable<IUsuario> {
-    return this.http.get<IUsuario>( this.url + "?query=" + nombreUsuario  );
+    return this.http.get<IUsuario>( this.url + "?query=" + nombreUsuario , { headers: this.headers} );
   }
 
   obtenerDatosAcercaDe(nombreUsuario: string):Observable<IAcercaDe> {
-    return this.http.get<IAcercaDe>( this.url + nombreUsuario + '/acerca_de' );
+    return this.http.get<IAcercaDe>( this.url + nombreUsuario + '/acerca_de', { headers: this.headers} );
   }
 
   obtenerDatosEducacion(nombreUsuario: string):Observable<IEducacion> {
@@ -74,39 +74,39 @@ export class PortafolioService {
 
 
   obtenerDatosExperiencias(nombreUsuario: string):Observable<IExperiencia> {
-    return this.http.get<IExperiencia>( this.url + nombreUsuario +'/experiencia');
+    return this.http.get<IExperiencia>( this.url + nombreUsuario +'/experiencia', { headers: this.headers});
   }
 
   obtenerDatosProyectos(nombreUsuario: string):Observable<IProyecto> {
-    return this.http.get<IProyecto>( this.url + nombreUsuario + '/proyectos');
+    return this.http.get<IProyecto>( this.url + nombreUsuario + '/proyectos', { headers: this.headers});
   }
 
   obtenerDatosSkills(nombreUsuario: string):Observable<ISkill> {
-    return this.http.get<ISkill>( this.url + nombreUsuario + '/skills');
+    return this.http.get<ISkill>( this.url + nombreUsuario + '/skills', { headers: this.headers});
   }
 
   // *********************************************************************
   // **************   |   METHOD'S GET ONE    | **************************
   // *********************************************************************
 
-  obtenerOneDatosAcercaDe(id: number):Observable<any> {
-    return this.http.get<any>( this.url + 'acerca_de/' + id );
+  obtenerOneDatosAcercaDe(nombreUsuario: string, id: number):Observable<any> {
+    return this.http.get<any>( this.url + nombreUsuario + '/acerca_de/' + id, { headers: this.headers} );
   }
 
-  obtenerOneDatosEducacion(id: number):Observable<IEducacion> {
-    return this.http.get<IEducacion>( this.url + 'educacion/' + id);
+  obtenerOneDatosEducacion(nombreUsuario: string, id: number):Observable<IEducacion> {
+    return this.http.get<IEducacion>( this.url + nombreUsuario + '/educacion/' + id, { headers: this.headers});
   }
 
-  obtenerOneDatosExperiencia(id: number):Observable<IExperiencia> {
-    return this.http.get<IExperiencia>( this.url + 'experiencias/' + id);
+  obtenerOneDatosExperiencia(nombreUsuario: string, id: number):Observable<IExperiencia> {
+    return this.http.get<IExperiencia>( this.url  + nombreUsuario +  '/experiencias/' + id, { headers: this.headers});
   }
 
-  obtenerOneDatosProyecto(id: number):Observable<IProyecto> {
-    return this.http.get<IProyecto>( this.url + 'proyectos/' + id);
+  obtenerOneDatosProyecto(nombreUsuario: string, id: number):Observable<IProyecto> {
+    return this.http.get<IProyecto>( this.url  + nombreUsuario +  '/proyectos/' + id, { headers: this.headers});
   }
 
-  obtenerOneDatosSkill(id: number):Observable<ISkill> {
-    return this.http.get<ISkill>( this.url + 'skills/' + id);
+  obtenerOneDatosSkill(nombreUsuario: string, id: number):Observable<ISkill> {
+    return this.http.get<ISkill>( this.url +  nombreUsuario + '/skills/' + id, { headers: this.headers});
   }
 
 
@@ -115,49 +115,49 @@ export class PortafolioService {
   // **************   |   METHOD'S POST    | ******************************
   // *********************************************************************
 
-  postAcercaDe( AcercaDe: any ):Observable<any> {
+  postAcercaDe( nombreUsuario: string, AcercaDe: any ):Observable<any> {
     let AcercaDeJSON = JSON.stringify(AcercaDe);
-    return this.http.post<any>( this.url + 'acerca_de', AcercaDeJSON , { headers: this.headers} );
+    return this.http.post<any>( this.url +  nombreUsuario + '/acerca_de', AcercaDeJSON , { headers: this.headers} );
   }
 
-  postEducacion( Educacion: IEducacion ):Observable<IEducacion> {
-    return this.http.post<IEducacion>( this.url + 'educacion', Educacion , { headers: this.headers} );
+  postEducacion( nombreUsuario: string, Educacion: IEducacion ):Observable<IEducacion> {
+    return this.http.post<IEducacion>( this.url  + nombreUsuario +  '/educacion', Educacion , { headers: this.headers} );
   }
 
-  postExperiencia( Experiencia: IExperiencia ):Observable<IExperiencia> {
-    return this.http.post<IExperiencia>( this.url + 'experiencias', Experiencia , { headers: this.headers} );
+  postExperiencia( nombreUsuario: string, Experiencia: IExperiencia ):Observable<IExperiencia> {
+    return this.http.post<IExperiencia>( this.url  + nombreUsuario + '/experiencias', Experiencia , { headers: this.headers} );
   }
 
-  postProyecto( Proyecto: IProyecto ):Observable<IProyecto> {
-    return this.http.post<IProyecto>( this.url + 'proyectos', Proyecto , { headers: this.headers} );
+  postProyecto(nombreUsuario: string,  Proyecto: IProyecto ):Observable<IProyecto> {
+    return this.http.post<IProyecto>( this.url +  nombreUsuario + '/proyectos', Proyecto , { headers: this.headers} );
   }
 
-  postSkill( Skill: ISkill ):Observable<ISkill> {
-    return this.http.post<ISkill>( this.url + 'skills', Skill , { headers: this.headers} );
+  postSkill( nombreUsuario: string, Skill: ISkill ):Observable<ISkill> {
+    return this.http.post<ISkill>( this.url  + nombreUsuario + '/skills', Skill , { headers: this.headers} );
   }
 
   // *********************************************************************
   // **************   |   METHOD'S PUT    | ******************************
   // *********************************************************************
 
-  putAcercaDe( AcercaDe: any, id: Number ):Observable<any> {
-    return this.http.put<any>( this.url + 'acerca_de/' + id, AcercaDe , { headers: this.headers} );
+  putAcercaDe( nombreUsuario: string, AcercaDe: any, id: Number ):Observable<any> {
+    return this.http.put<any>( this.url  + nombreUsuario + '/acerca_de/' + id, AcercaDe , { headers: this.headers} );
   }
 
-  putExperiencia( Experiencia: IExperiencia, i: Number  ):Observable<IExperiencia> {
-    return this.http.put<IExperiencia>( this.url + 'experiencias/' + i, Experiencia , { headers: this.headers} );
+  putExperiencia(nombreUsuario: string,  Experiencia: IExperiencia, i: Number  ):Observable<IExperiencia> {
+    return this.http.put<IExperiencia>( this.url  + nombreUsuario +  '/experiencias/' + i, Experiencia , { headers: this.headers} );
   }
 
-  putEducacion( Educacion: IEducacion, id: Number  ):Observable<IEducacion> {
-    return this.http.put<IEducacion>( this.url + 'educacion/' + id, Educacion , { headers: this.headers} );
+  putEducacion(nombreUsuario: string,  Educacion: IEducacion, id: Number  ):Observable<IEducacion> {
+    return this.http.put<IEducacion>( this.url  + nombreUsuario + '/educacion/' + id, Educacion , { headers: this.headers} );
   }
 
-  putProyecto( Proyecto: IProyecto, id: Number  ):Observable<IProyecto> {
-    return this.http.put<IProyecto>( this.url + 'proyectos/' + id, Proyecto , { headers: this.headers} );
+  putProyecto( nombreUsuario: string, Proyecto: IProyecto, id: Number  ):Observable<IProyecto> {
+    return this.http.put<IProyecto>( this.url  + nombreUsuario + '/proyectos/' + id, Proyecto , { headers: this.headers} );
   }
 
-  putSkill( Skill: ISkill, id: Number  ):Observable<ISkill> {
-    return this.http.put<ISkill>( this.url + 'skills/' + id, Skill , { headers: this.headers} );
+  putSkill( nombreUsuario: string, Skill: ISkill, id: Number  ):Observable<ISkill> {
+    return this.http.put<ISkill>( this.url  + nombreUsuario + '/skills/' + id, Skill , { headers: this.headers} );
   }
 
 
@@ -165,24 +165,24 @@ export class PortafolioService {
   // **************   |   METHOD'S DELETE    | ***************************
   // *********************************************************************
 
-  deleteAcercaDe( id: Number ):Observable<any> {
-    return this.http.delete<any>( this.url + 'acerca_de/' + id , { headers: this.headers} );
+  deleteAcercaDe( nombreUsuario: string, id: Number ):Observable<any> {
+    return this.http.delete<any>( this.url  + nombreUsuario + '/acerca_de/' + id , { headers: this.headers} );
   }
 
-  deleteEducacion( id: Number ):Observable<IEducacion> {
-    return this.http.delete<IEducacion>( this.url + 'educacion/' + id , { headers: this.headers} );
+  deleteEducacion(nombreUsuario: string, id: Number ):Observable<IEducacion> {
+    return this.http.delete<IEducacion>( this.url  + nombreUsuario + '/educacion/' + id , { headers: this.headers} );
   }
 
-  deleteExperiencia( id: Number ):Observable<IExperiencia> {
-    return this.http.delete<IExperiencia>( this.url + 'experiencias/' + id ,  { headers: this.headers} );
+  deleteExperiencia( nombreUsuario: string, id: Number ):Observable<IExperiencia> {
+    return this.http.delete<IExperiencia>( this.url  + nombreUsuario + '/experiencias/' + id ,  { headers: this.headers} );
   }
 
-  deleteProyecto( id: Number ):Observable<IProyecto> {
-    return this.http.delete<IProyecto>( this.url + 'proyectos/' + id ,  { headers: this.headers} );
+  deleteProyecto( nombreUsuario: string, id: Number ):Observable<IProyecto> {
+    return this.http.delete<IProyecto>( this.url  + nombreUsuario + '/proyectos/' + id ,  { headers: this.headers} );
   }
 
-  deleteSkill( id: Number ):Observable<ISkill> {
-    return this.http.delete<ISkill>( this.url + 'skills/' + id ,  { headers: this.headers} );
+  deleteSkill( nombreUsuario: string, id: Number ):Observable<ISkill> {
+    return this.http.delete<ISkill>( this.url  + nombreUsuario +  '/skills/' + id ,  { headers: this.headers} );
   }
 
 
