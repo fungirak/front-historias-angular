@@ -15,23 +15,34 @@ import { IUsuario } from '../interfaces/iusuario';
 })
 export class PortafolioService {
 
+   headers: HttpHeaders = new HttpHeaders();
    url: string;
    urlInputSearchUsers: string = "https://historias.azurewebsites.net/api/v1/portafolio/usuarios/search";
 
-  // Headers para POST, PUT Y DELETE.
-  headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*' });
 
 
   constructor(private http:HttpClient, private route: ActivatedRoute) {
-    this.url = "https://historias.azurewebsites.net/portafolio/";
+    const token = localStorage.getItem('token');
+
+    this.url = "https://historias.azurewebsites.net/api/v1/portafolio/";
     this.route.params.subscribe(params => {
       const userName = params['nombreUsuario']; // suponiendo que el nombre de usuario está en la URL como un parámetro llamado 'usuario'
       const userPortafolioUrl = this.url + userName;
       console.log("URL USUARIO: ", userName);
       // Aquí puedes hacer cualquier otra cosa que necesites con la URL dinámica
     });
+
+      // Verifica si el token existe antes de construir el encabezado
+      if (token) {
+        this.headers = new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        });
+      } else {
+        // Manejar el caso en el que el token no está presente (puede mostrar un mensaje o redirigir a iniciar sesión)
+        console.error('Token no disponible. El usuario debe iniciar sesión.');
+      }
+
   }
 
 
@@ -58,7 +69,7 @@ export class PortafolioService {
   }
 
   obtenerDatosEducacion(nombreUsuario: string):Observable<IEducacion> {
-    return this.http.get<IEducacion>( this.url + nombreUsuario + '/educacion');
+    return this.http.get<IEducacion>( this.url + nombreUsuario + '/educacion', { headers: this.headers}  );
   }
 
 
